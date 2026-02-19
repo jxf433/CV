@@ -1,0 +1,29 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Miffy B. Pluis, PhD"
+  description: "Professor of Burrow Architecture & Lapine Behavioral Sciences"
+  navbar:
+    left:
+      - text: "CV"
+        href: index.qmd
+      - text: "Blog"
+        href: blog/index.qmd
+    right:
+      - icon: envelope
+        href: mailto:m.b.pluis@uu-meadow.nl
+        aria-label: Email
+  page-footer:
+    center: "© 2026 Miffy B. Pluis, PhD · University of Utrecht-den-Haag"
+
+format:
+  html:
+    theme:
+      light: flatly
+      dark: darkly
+    css: styles.css
+    toc: true
+    toc-depth: 2
+    smooth-scroll: true

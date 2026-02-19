@@ -1,0 +1,32 @@
+/* CV page: tighten vertical rhythm between sections */
+.quarto-title-block .quarto-title-meta {
+  margin-top: 0.5rem;
+}
+
+/* Slightly increase body font size for readability */
+body {
+  font-size: 1.0rem;
+}
+
+/* Publication list: tighten spacing */
+ol li,
+ul li {
+  margin-bottom: 0.25rem;
+}
+
+/* Horizontal rules between CV sections */
+hr {
+  margin-top: 1.75rem;
+  margin-bottom: 1.75rem;
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+/* Blog listing: ensure description text is not too wide */
+.quarto-listing {
+  max-width: 760px;
+}
+
+/* Navbar: keep the title from wrapping on small screens */
+.navbar-brand {
+  white-space: nowrap;
+}

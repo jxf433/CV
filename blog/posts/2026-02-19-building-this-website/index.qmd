@@ -1,0 +1,157 @@
+---
+title: "Building This Website with Quarto and GitHub Actions"
+date: 2026-02-19
+author: "Miffy B. Pluis"
+description: "How I turned a plain Markdown CV into a full academic website with a blog, automated deployment, and just enough complexity to feel satisfying."
+categories:
+  - quarto
+  - github-actions
+  - website
+image: ""
+---
+
+## From Markdown to Website
+
+For years, my CV lived as a single `index.md` file in a GitHub repository. It did the job — version-controlled, readable in any text editor, easy to update. But it had no navigation, no blog, and no way to share longer thoughts. This post describes how I turned it into a proper academic website using [Quarto](https://quarto.org), deployed automatically to GitHub Pages via GitHub Actions.
+
+## Why Quarto?
+
+I had a few requirements:
+
+- The CV should remain the **front page** — no splash screen, no landing page with a photo and a tagline. Just the CV.
+- I wanted a **blog** for longer writing: research notes, teaching reflections, the occasional opinion on optimal burrow ventilation.
+- The whole thing should be **static HTML** — fast, cheap to host, no database, no server to maintain.
+- Deployment should be **fully automated**: push to `main`, site updates. No manual steps.
+
+Quarto met all of these. It is a document publishing system built on Pandoc that renders `.qmd` files (Quarto Markdown — essentially Markdown with optional code execution) into HTML, PDF, and other formats. Its website mode supports multi-page projects, navigation bars, blog listings, and themes out of the box.
+
+## Project Structure
+
+The final structure is straightforward:
+
+```
+.
+├── _quarto.yml                          # site-wide configuration
+├── index.qmd                            # CV (front page)
+├── styles.css                           # custom styles
+├── blog/
+│   ├── index.qmd                        # blog listing page
+│   └── posts/
+│       └── 2026-02-19-building-this-website/
+│           └── index.qmd               # this post
+└── .github/
+    └── workflows/
+        └── deploy.yml                   # GitHub Actions workflow
+```
+
+## Configuration: `_quarto.yml`
+
+The `_quarto.yml` file at the root controls the whole site. The key sections are:
+
+```yaml
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Miffy B. Pluis, PhD"
+  navbar:
+    left:
+      - text: "CV"
+        href: index.qmd
+      - text: "Blog"
+        href: blog/index.qmd
+```
+
+The `project.type: website` tells Quarto to treat the directory as a multi-page site rather than a single document. `output-dir: _site` puts the rendered HTML in `_site/`, which is what GitHub Pages will serve.
+
+The `navbar` section adds a top navigation bar with links to the CV and the blog. Quarto handles the active-page highlighting automatically.
+
+For theming I used `flatly` (light) and `darkly` (dark) from the [Bootswatch](https://bootswatch.com) collection, which Quarto bundles. This gives a clean, readable result with automatic dark-mode switching based on the user's system preference — at the cost of zero effort.
+
+## The CV Page: `index.qmd`
+
+The CV content came directly from `index.md`, with one change: a YAML front matter block at the top.
+
+```yaml
+---
+title: "Miffy B. Pluis, PhD"
+subtitle: "Professor of Burrow Architecture & Lapine Behavioral Sciences"
+page-layout: full
+toc-title: "On this page"
+---
+```
+
+The `page-layout: full` removes the sidebar and uses the full page width. The `toc-title` enables a table of contents in the right margin, which turns out to be genuinely useful on a long CV — readers can jump straight to Publications or Teaching without scrolling past Education.
+
+The rest of the file is the original Markdown, unchanged.
+
+## The Blog
+
+Quarto's blog support is built on its **listing** feature. The `blog/index.qmd` file contains almost no content — just front matter:
+
+```yaml
+---
+title: "Blog"
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: true
+  feed: true
+---
+```
+
+This tells Quarto to scan `blog/posts/` for `.qmd` files and generate a listing page automatically, sorted by date. The `feed: true` line generates an RSS feed at `blog/index.xml`.
+
+Each post lives in its own subdirectory under `blog/posts/`. The directory name follows the convention `YYYY-MM-DD-slug/`, and the post itself is `index.qmd`. The YAML front matter controls the listing metadata:
+
+```yaml
+---
+title: "Building This Website with Quarto and GitHub Actions"
+date: 2026-02-19
+author: "Miffy B. Pluis"
+description: "..."
+categories:
+  - quarto
+  - github-actions
+---
+```
+
+## Deployment: GitHub Actions
+
+The `.github/workflows/deploy.yml` file handles automatic deployment. On every push to `main`, it:
+
+1. Checks out the repository
+2. Installs Quarto
+3. Renders the site
+4. Publishes the rendered `_site/` directory to the `gh-pages` branch
+
+```yaml
+- uses: quarto-dev/quarto-actions/setup@v2
+- uses: quarto-dev/quarto-actions/publish@v2
+  with:
+    target: gh-pages
+  env:
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+
+The `quarto-dev/quarto-actions/publish` action handles the branch management. It renders the site, commits the output to `gh-pages`, and pushes — no manual configuration of deployment keys required, because GitHub Actions has write access to the repository via `GITHUB_TOKEN`.
+
+The one required manual step: in the GitHub repository settings, under **Pages**, set the source to the `gh-pages` branch. After that, every push to `main` triggers a fresh deployment.
+
+## What I Would Do Differently
+
+The setup works well. A few things I noted along the way:
+
+**No `quarto.lock`.** Quarto does not have a lockfile for extension versions. If I add extensions later, I should pin them explicitly in the workflow to avoid surprise breakage.
+
+**The `_site/` directory should be gitignored.** The rendered output does not belong in the `main` branch — GitHub Actions pushes it to `gh-pages` separately. Adding `_site/` to `.gitignore` keeps the main branch clean.
+
+**Post images are optional but improve the listing.** The listing page looks better when posts have an `image:` field in their front matter. I left it empty for this first post; future posts should include a relevant image.
+
+## Conclusion
+
+The whole setup — from the original `index.md` to a deployed website with a blog — required creating six files: `_quarto.yml`, `index.qmd`, `blog/index.qmd`, the first blog post, `styles.css`, and the GitHub Actions workflow. Quarto handled the HTML generation, theming, navigation, and blog listing. GitHub Actions handled the deployment.
+
+The result is a static site that costs nothing to host, updates automatically on every commit, and requires no infrastructure to maintain. That meets my bar for coziness.
