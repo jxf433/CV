@@ -1,7 +1,7 @@
 ---
 title: "Building This Website with Quarto and GitHub Actions"
 date: 2026-02-19
-author: "Miffy B. Pluis"
+author: "Jie Feng"
 description: "How I turned a plain Markdown CV into a full academic website with a blog, automated deployment, and just enough complexity to feel satisfying."
 categories:
   - quarto
@@ -19,7 +19,7 @@ For years, my CV lived as a single `index.md` file in a GitHub repository. It di
 I had a few requirements:
 
 - The CV should remain the **front page** — no splash screen, no landing page with a photo and a tagline. Just the CV.
-- I wanted a **blog** for longer writing: research notes, teaching reflections, the occasional opinion on optimal burrow ventilation.
+- I wanted a **blog** for longer writing: research notes, bioinformatics tips, and reflections on working at the intersection of food safety and microbial genomics.
 - The whole thing should be **static HTML** — fast, cheap to host, no database, no server to maintain.
 - Deployment should be **fully automated**: push to `main`, site updates. No manual steps.
 
@@ -54,7 +54,7 @@ project:
   output-dir: _site
 
 website:
-  title: "Miffy B. Pluis, PhD"
+  title: "Jie Feng, PhD"
   navbar:
     left:
       - text: "CV"
@@ -75,8 +75,8 @@ The CV content came directly from `index.md`, with one change: a YAML front matt
 
 ```yaml
 ---
-title: "Miffy B. Pluis, PhD"
-subtitle: "Professor of Burrow Architecture & Lapine Behavioral Sciences"
+title: "Jie Feng, PhD"
+subtitle: "Food Microbiology | Genomics | Bioinformatics | Food Safety"
 page-layout: full
 toc-title: "On this page"
 ---
@@ -110,7 +110,7 @@ Each post lives in its own subdirectory under `blog/posts/`. The directory name 
 ---
 title: "Building This Website with Quarto and GitHub Actions"
 date: 2026-02-19
-author: "Miffy B. Pluis"
+author: "Jie Feng"
 description: "..."
 categories:
   - quarto
@@ -154,4 +154,4 @@ The setup works well. A few things I noted along the way:
 
 The whole setup — from the original `index.md` to a deployed website with a blog — required creating six files: `_quarto.yml`, `index.qmd`, `blog/index.qmd`, the first blog post, `styles.css`, and the GitHub Actions workflow. Quarto handled the HTML generation, theming, navigation, and blog listing. GitHub Actions handled the deployment.
 
-The result is a static site that costs nothing to host, updates automatically on every commit, and requires no infrastructure to maintain. That meets my bar for coziness.
+The result is a static site that costs nothing to host, updates automatically on every commit, and requires no infrastructure to maintain.

@@ -5,8 +5,8 @@ project:
     - "**/*.qmd"
 
 website:
-  title: "Miffy B. Pluis, PhD"
-  description: "Professor of Burrow Architecture & Lapine Behavioral Sciences"
+  title: "Jie Feng, PhD"
+  description: "Food Microbiology | Genomics | Bioinformatics | Food Safety"
   site-url: "https://jxf433.github.io/CV"
   navbar:
     left:
@@ -16,10 +16,10 @@ website:
         href: blog/index.qmd
     right:
       - icon: envelope
-        href: mailto:m.b.pluis@uu-meadow.nl
+        href: mailto:jxf433@psu.com
         aria-label: Email
   page-footer:
-    center: "© 2026 Miffy B. Pluis, PhD · University of Utrecht-den-Haag"
+    center: "© 2026 Jie Feng · Pennsylvania State University"
 
 format:
   html:
