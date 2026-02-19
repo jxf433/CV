@@ -1,10 +1,13 @@
 project:
   type: website
   output-dir: _site
+  render:
+    - "**/*.qmd"
 
 website:
   title: "Miffy B. Pluis, PhD"
   description: "Professor of Burrow Architecture & Lapine Behavioral Sciences"
+  site-url: "https://jxf433.github.io/CV"
   navbar:
     left:
       - text: "CV"
