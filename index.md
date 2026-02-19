@@ -1,65 +1,45 @@
-# Miffy B. Pluis, PhD
+---
+layout: default
+title: Jie Feng
+---
 
-**Professor of Burrow Architecture & Lapine Behavioral Sciences**
-Department of Meadow Studies, University of Utrecht-den-Haag
-Snuffie Lane 1955, 3500 AA Utrecht, The Netherlands
+# Jie Feng, PhD  
+**Food Microbiology | Genomics | Bioinformatics | Food Safety**
 
-Email: m.b.pluis@uu-meadow.nl | ORCID: 0000-0002-EARS-0001
+📍 Pennsylvania State University  
+📧 jxf433@psu.com  
+📱 347-217-0932  
+
+---
+
+## About Me
+
+I am a Food Science researcher specializing in microbial genomics, bioinformatics pipeline development, and food safety microbiology. My work focuses on pathogen detection in metagenomic datasets and comparative genomic analysis of foodborne pathogens.
 
 ---
 
 ## Education
 
-**PhD in Theoretical Carrot Biochemistry**, Wageningen University, 2008
-Dissertation: *"Orange Is the New Green: Carotenoid Bioavailability in Subterranean Root Systems and Its Implications for Lagomorph Nutrition"*
-Advisor: Prof. Boris Bear
+**PhD in Food Science**  
+Pennsylvania State University (08/2025 – Present)  
+Advisor: Dr. Edward G. Dudley  
 
-**MSc in Meadow Ecology & Floral Arrangement** (cum laude), Utrecht University, 2004
-Thesis: *"Spatial Distribution of Wildflowers in Dutch Polders: A Sensory Perspective"*
+**MSc in Food Science**  
+Pennsylvania State University (08/2022 – 05/2024)  
+Advisor: Dr. Edward G. Dudley  
 
-**BSc in General Curiosity Studies**, Leiden University, 2002
-
----
-
-## Academic Appointments
-
-**Full Professor**, Department of Meadow Studies, University of Utrecht-den-Haag, 2020–present
-
-**Associate Professor**, Institute for Advanced Hutch Sciences, ETH Bunnyrich, 2014–2020
-
-**Assistant Professor**, Faculty of Whisker Physics, University of Amsterdam, 2009–2014
-
-**Postdoctoral Fellow**, Laboratory of Small Mammal Happiness, Max Planck Institute for Cozy Afternoons, Heidelberg, 2008–2009
+**BSc in Food Science**  
+Iowa State University (08/2016 – 05/2020)  
+- Spring 2020 Dean’s List  
 
 ---
 
-## Research Interests
+## Research
 
-Burrow structural engineering, inter-species friendship dynamics, minimalist living in complex environments, the biophysics of ear thermoregulation, emotional intelligence in lagomorphs, the cultural significance of the color orange.
+### PhD Thesis (In Progress)
+**Benchmarking Bioinformatics Tools for _Salmonella enterica_ Detection in Simulated Wastewater Metagenomes**
 
----
-
-## Selected Publications
-
-1. **Pluis, M.B.**, Bear, B., & Snuffy, S. (2024). "Long ears, deep thoughts: Auricular surface area as a predictor of emotional processing in rabbits." *Nature Lapine Neuroscience*, 17(3), 112–128.
-
-2. Pig, G., **Pluis, M.B.**, & Pup, M. (2023). "Friendship networks across species boundaries: A 68-year longitudinal study." *Proceedings of the Royal Society of Animal Companions*, 291, 20230442.
-
-3. **Pluis, M.B.** (2022). "Silence as communication: Non-verbal signaling via minimalist facial morphology." *Journal of Expressive Ethology*, 45(1), 33–51.
-
-4. **Pluis, M.B.** & de Bruin, D. (2021). "Optimal burrow ventilation under North Sea climate conditions: A computational fluid dynamics approach." *Annual Review of Hutch Engineering*, 8, 201–219.
-
-5. **Pluis, M.B.**, Elephant, E., & Duckling, A. (2020). "Simple shapes, complex emotions: How geometric body plans encode affective states." *PLOS Feelings*, 15(7), e0241955.
-
-6. Bear, B. & **Pluis, M.B.** (2019). "Carry capacity of small cotton tails during high-wind events in coastal dune habitats." *Wind & Whiskers*, 22(4), 88–97.
-
-7. **Pluis, M.B.** (2018). "A unified field theory of coziness: Thermal, social, and spatial determinants of contentment in enclosed spaces." *Physical Review Comfort*, 101(2), 024517.
-
-8. **Pluis, M.B.**, Owl, W., & Poppy, P. (2016). "Cross-modal perception in rabbits: Do flowers smell like they look?" *Multisensory Research*, 29(6–7), 553–571.
-
-9. **Pluis, M.B.** (2012). "Why small is beautiful: Allometric scaling of curiosity in mammals under 2 kg." *Ecology of Wonder*, 3(1), 14–29.
-
-10. **Pluis, M.B.** & Bruna, D. (2010). "First principles of minimalist design in natural habitats: Lessons from the Dutch rabbit." *Architectural Digest of Burrows*, 1(1), 1–18.
+- Developing benchmarking workflows using CAMISIM-simulat
 
 ---
 
